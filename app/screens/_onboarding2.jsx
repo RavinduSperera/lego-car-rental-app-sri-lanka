@@ -22,6 +22,7 @@ const Onboarding2 = () => {
 
   const handleNext = () => {
     // TODO: later send to login / home screen
+    router.push('/screens/_register');
   };
 
   return (

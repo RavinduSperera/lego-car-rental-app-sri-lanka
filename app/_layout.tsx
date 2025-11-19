@@ -12,6 +12,9 @@ export default function RootLayout() {
         {/* Onboarding screen at /onboarding */}
         <Stack.Screen name="onboarding" />
         <Stack.Screen name="onboarding2" />
+
+        <Stack.Screen name='register'/>
+        <Stack.Screen name='login'/>
       </Stack>
     </SafeAreaProvider>
     
