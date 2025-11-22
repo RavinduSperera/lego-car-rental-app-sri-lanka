@@ -13,16 +13,14 @@ This project contains:
 ---
 
 ## 📌 1. Student Information
-**Name:** *Your Name*  
-**Student ID:** *Your ID*  
-**Module:** *Your Module Name*  
+**Name:** *Perera*     
 **Submission Type:** UI/UX + Mobile App Implementation  
 
 ---
 
 ## 📌 2. Design File (Figma / AI Studio)
 🔗 **Design Prototype:**  
-[`[<ADD YOUR FIGMA OR GOOGLE AI STUDIO LINK HERE>](https://www.figma.com/proto/20Wqrxku4I5xFR88EcfJU8/Car-Rental-App?node-id=16-6&t=FiklVwBsZEsqXyy6-1)`]([https://www.figma.com/proto/20Wqrxku4I5xFR88EcfJU8/Car-Rental-App?node-id=16-6&t=FiklVwBsZEsqXyy6-1](https://www.figma.com/proto/20Wqrxku4I5xFR88EcfJU8/Car-Rental-App?node-id=16-6&t=FiklVwBsZEsqXyy6-1))
+'https://www.figma.com/proto/20Wqrxku4I5xFR88EcfJU8/Car-Rental-App?node-id=16-6&t=FiklVwBsZEsqXyy6-1'
 
 This includes:
 - All onboarding screens  
@@ -32,10 +30,6 @@ This includes:
 - Add-vehicle form  
 
 ---
-
-## 📌 3. GitHub Repository (This Project)
-🔗 **React Native Source Code:**  
-`<ADD YOUR GITHUB REPOSITORY LINK HERE>`
 
 Clone the repo:
 
@@ -141,6 +135,8 @@ Call button
 Pickup location
 Important note
 
+---
+
 ## 📁 Folder Structure
 ```bash
 app/
@@ -173,6 +169,8 @@ README.md
 package.json
 tsconfig.json
 ```
+
+---
 
 ## 🎉 Conclusion
 
