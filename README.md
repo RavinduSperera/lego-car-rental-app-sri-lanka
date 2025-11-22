@@ -26,7 +26,7 @@ This project contains:
 
 ## 📌 3. App APK Installation Link
 🔗 **APK Installation Link**
-'https://expo.dev/accounts/rvndu.perera/projects/lego/builds/7e49e800-9558-4525-be32-5168cb60cdf1'
+'https://expo.dev/accounts/rvndu.perera/projects/lego/builds/6de0d305-84c9-48d5-a7da-3a3aa17bed91'
 
 ---
 
