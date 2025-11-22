@@ -22,6 +22,12 @@ This project contains:
 🔗 **Design Prototype:**  
 'https://www.figma.com/proto/20Wqrxku4I5xFR88EcfJU8/Car-Rental-App?node-id=16-6&t=FiklVwBsZEsqXyy6-1'
 
+---
+
+## 📌 3. App APK Installation Link
+🔗 **APK Installation Link**
+'[https://www.figma.com/proto/20Wqrxku4I5xFR88EcfJU8/Car-Rental-App?node-id=16-6&t=FiklVwBsZEsqXyy6-1](https://expo.dev/accounts/rvndu.perera/projects/lego/builds/7e49e800-9558-4525-be32-5168cb60cdf1)'
+
 This includes:
 - All onboarding screens  
 - Home + Search UI  
