@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import {
   Dimensions,
   Image,
+  Pressable,
   ScrollView,
   StyleSheet,
   Text,
@@ -109,6 +110,12 @@ const HomeScreen = () => {
           >
             {mostDemanded.map((itemIndex) => (
               <View key={itemIndex} style={styles.carCard}>
+
+                <Pressable
+                  style={styles.carCard}
+                  onPress={() => router.push('./_vehicleDetails')}
+                >
+
                 {/* TODO: car image for this card */}
                 <Image
                   source={require('../../assets/images/car_pic.jpg')}
@@ -139,6 +146,7 @@ const HomeScreen = () => {
                     <Text style={styles.carMetaBold}>Maradana, Colombo</Text>
                   </Text>
                 </View>
+                </Pressable>
               </View>
             ))}
           </ScrollView>

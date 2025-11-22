@@ -367,7 +367,7 @@ const styles = StyleSheet.create({
   searchInputWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderRadius: 24,
+    borderRadius: 10,
     backgroundColor: '#F7F7F7',
     elevation: 4,
     shadowColor: '#000',
@@ -433,7 +433,7 @@ const styles = StyleSheet.create({
   },
   driverOption: {
     flex: 1,
-    borderRadius: 18,
+    borderRadius: 10,
     backgroundColor: '#FFFFFF',
     borderWidth: 1,
     borderColor: '#E3E3E3',
