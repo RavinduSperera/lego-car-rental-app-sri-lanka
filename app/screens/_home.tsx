@@ -46,7 +46,7 @@ const HomeScreen = () => {
     }, 4000); // change every 4s
 
     return () => clearInterval(interval);
-  }, [bannerIndex]);
+  }, [bannerIndex, width]);
 
   // dummy data for horizontal sliders
   const mostDemanded = [0, 1, 2];
@@ -55,36 +55,35 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <ScrollView
-          style={{ flex: 1 }}
-          contentContainerStyle={styles.scrollContent}
-          showsVerticalScrollIndicator={false}
-        >
-          {/* TOP BAR: logo + user profile */}
-          <View style={styles.topBar}>
-            {/* TODO: replace with your LEGO logo image */}
-            <View style={styles.logoRow}>
-              <Image
-                source={require('../../assets/images/header_logo.png')}
-                style={styles.logoMark}
-                resizeMode="contain"
-              />
-              <Text style={styles.logoText}>LEGO</Text>
-            </View>
-
-            <View style={styles.userRow}>
-              <View style={{ marginRight: 8 }}>
-                <Text style={styles.userName}>David Jay</Text>
-                <Text style={styles.userEmail}>david@gmail.com</Text>
-              </View>
-              {/* TODO: replace with user avatar image */}
-              <Image
-                source={require('../../assets/images/avatar.png')}
-                style={styles.avatar}
-              />
-            </View>
+        {/* TOP BAR: logo + user profile - Fixed Header */}
+        <View style={styles.topBar}>
+          {/* TODO: replace with your LEGO logo image */}
+          <View style={styles.logoRow}>
+            <Image
+              source={require('../../assets/images/header_logo.png')}
+              style={styles.logoMark}
+              resizeMode="contain"
+            />
           </View>
 
+          <View style={styles.userRow}>
+            <View style={styles.userInfo}>
+              <Text style={styles.userName}>David Jay</Text>
+              <Text style={styles.userEmail}>david@gmail.com</Text>
+            </View>
+            {/* TODO: replace with user avatar image */}
+            <Image
+              source={require('../../assets/images/avatar.png')}
+              style={styles.avatar}
+            />
+          </View>
+        </View>
+
+        <ScrollView
+          style={{ flex: 1 }}
+          // contentContainerStyle={styles.scrollContent}
+          showsVerticalScrollIndicator={false}
+        >
           {/* HERO BANNER: "WELCOME TO SRI LANKA" with lady in saree */}
           {/* This whole section is a single IMAGE, as you requested */}
           <View style={styles.heroWrapper}>
@@ -102,6 +101,7 @@ const HomeScreen = () => {
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.horizontalList}
+            style={styles.horizontalScroll}
           >
             {mostDemanded.map((itemIndex) => (
               <View key={itemIndex} style={styles.carCard}>
@@ -113,7 +113,13 @@ const HomeScreen = () => {
                 />
 
                 <View style={styles.carInfo}>
-                  <Text style={styles.carTitle}>Corolla Axio Hybrid G</Text>
+                  <View style={styles.titleRow}>
+                    <Text style={styles.carTitle}>Corolla Axio Hybrid G</Text>
+                    {/* status pill */}
+                    <View style={[styles.statusPill, { backgroundColor: '#00C853' }]}>
+                      <Text style={styles.statusText}>Available</Text>
+                    </View>
+                  </View>
 
                   {/* stars line – you can later replace with vector icons */}
                   <Text style={styles.starRow}>★★★★★</Text>
@@ -129,11 +135,6 @@ const HomeScreen = () => {
                     <Text style={styles.carMetaBold}>Maradana, Colombo</Text>
                   </Text>
                 </View>
-
-                {/* status pill */}
-                <View style={[styles.statusPill, { backgroundColor: '#00C853' }]}>
-                  <Text style={styles.statusText}>Available</Text>
-                </View>
               </View>
             ))}
           </ScrollView>
@@ -144,6 +145,7 @@ const HomeScreen = () => {
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.horizontalList}
+            style={styles.horizontalScroll}
           >
             {best4x4.map((itemIndex) => (
               <View key={itemIndex} style={styles.carCard}>
@@ -155,7 +157,13 @@ const HomeScreen = () => {
                 />
 
                 <View style={styles.carInfo}>
-                  <Text style={styles.carTitle}>Hybrid G SUV</Text>
+                  <View style={styles.titleRow}>
+                    <Text style={styles.carTitle}>Hybrid G SUV</Text>
+                    {/* status pill – booked */}
+                    <View style={[styles.statusPill, { backgroundColor: '#FF5252' }]}>
+                      <Text style={styles.statusText}>Booked</Text>
+                    </View>
+                  </View>
                   <Text style={styles.starRow}>★★★★★</Text>
 
                   <Text style={styles.carMeta}>
@@ -170,11 +178,6 @@ const HomeScreen = () => {
                   </Text>
                 </View>
 
-                {/* status pill – booked */}
-                <View style={[styles.statusPill, { backgroundColor: '#FF5252' }]}>
-                  <Text style={styles.statusText}>Booked</Text>
-                </View>
-
                 {/* TODO: you can add bookmark icon as image here */}
               </View>
             ))}
@@ -182,37 +185,39 @@ const HomeScreen = () => {
 
           {/* TRY MORE OPTIONS – auto-scrolling banner slider */}
           <Text style={styles.sectionTitle}>Try more options</Text>
-          <ScrollView
-            ref={bannerScrollRef}
-            horizontal
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{}}
-          >
-            {banners.map((_, idx) => (
-              <View key={idx} style={{ width, paddingHorizontal: 16 }}>
-                <View style={styles.bannerCard}>
-                  {/* TODO: 1st banner image (e.g. Tuk Tuk beach) */}
-                  {idx === 0 && (
-                    <Image
-                      source={require('../../assets/images/post_imge_1.png')}
-                      style={styles.bannerImage}
-                      resizeMode="cover"
-                    />
-                  )}
+          <View style={styles.bannerContainer}>
+            <ScrollView
+              ref={bannerScrollRef}
+              horizontal
+              pagingEnabled
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.bannerScrollContent}
+            >
+              {banners.map((_, idx) => (
+                <View key={idx} style={styles.bannerSlide}>
+                  <View style={styles.bannerCard}>
+                    {/* TODO: 1st banner image (e.g. Tuk Tuk beach) */}
+                    {idx === 0 && (
+                      <Image
+                        source={require('../../assets/images/post_imge_1.png')}
+                        style={styles.bannerImage}
+                        resizeMode="cover"
+                      />
+                    )}
 
-                  {/* TODO: 2nd banner image */}
-                  {idx === 1 && (
-                    <Image
-                      source={require('../../assets/images/post_imge_2.png')}
-                      style={styles.bannerImage}
-                      resizeMode="cover"
-                    />
-                  )}
+                    {/* TODO: 2nd banner image */}
+                    {idx === 1 && (
+                      <Image
+                        source={require('../../assets/images/post_imge_2.png')}
+                        style={styles.bannerImage}
+                        resizeMode="cover"
+                      />
+                    )}
+                  </View>
                 </View>
-              </View>
-            ))}
-          </ScrollView>
+              ))}
+            </ScrollView>
+          </View>
         </ScrollView>
 
         {/* BOTTOM NAV BAR */}
@@ -236,34 +241,34 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
   },
-  scrollContent: {
-    paddingBottom: 90, // leave space for bottom nav
-  },
   topBar: {
     paddingHorizontal: 16,
-    paddingTop: 8,
-    paddingBottom: 4,
+    paddingTop: 12,
+    paddingBottom: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#F0F0F0',
+    zIndex: 10,
   },
   logoRow: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   logoMark: {
-    width: 40,
+    width: 100,
     height: 22,
     marginRight: 6,
-  },
-  logoText: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: '#2196C9',
   },
   userRow: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  userInfo: {
+    marginRight: 10,
+    alignItems: 'flex-end',
   },
   userName: {
     fontSize: 14,
@@ -281,8 +286,8 @@ const styles = StyleSheet.create({
   },
   heroWrapper: {
     marginHorizontal: 16,
-    marginTop: 8,
-    marginBottom: 16,
+    marginTop: 12,
+    marginBottom: 20,
     borderRadius: 20,
     overflow: 'hidden',
   },
@@ -294,13 +299,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
     marginHorizontal: 16,
-    marginTop: 8,
-    marginBottom: 8,
+    marginTop: 16,
+    marginBottom: 12,
     color: '#000',
+  },
+  horizontalScroll: {
+    marginBottom: 8,
   },
   horizontalList: {
     paddingLeft: 16,
-    paddingRight: 8,
+    paddingRight: 16,
   },
   carCard: {
     width: 290,
@@ -321,11 +329,19 @@ const styles = StyleSheet.create({
   carInfo: {
     paddingHorizontal: 16,
     paddingVertical: 12,
+    paddingBottom: 16,
+  },
+  titleRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 4,
   },
   carTitle: {
     fontSize: 16,
     fontWeight: '700',
-    marginBottom: 4,
+    flex: 1,
+    marginRight: 8,
   },
   starRow: {
     fontSize: 12,
@@ -342,23 +358,31 @@ const styles = StyleSheet.create({
     color: '#444',
   },
   statusPill: {
-    position: 'absolute',
-    right: 16,
-    bottom: 16,
     borderRadius: 16,
-    paddingHorizontal: 14,
+    paddingHorizontal: 10,
     paddingVertical: 4,
+    alignSelf: 'flex-start',
   },
   statusText: {
     fontSize: 11,
     fontWeight: '600',
     color: '#FFFFFF',
   },
+  bannerContainer: {
+    marginBottom: 16,
+  },
+  bannerScrollContent: {
+    paddingHorizontal: 0,
+  },
+  bannerSlide: {
+    width: width,
+    paddingHorizontal: 16,
+  },
   bannerCard: {
     borderRadius: 20,
     overflow: 'hidden',
     backgroundColor: '#EEE',
-    height: 170,
+    height: 200,
     shadowColor: '#000',
     shadowOpacity: 0.08,
     shadowRadius: 8,
@@ -368,21 +392,5 @@ const styles = StyleSheet.create({
   bannerImage: {
     width: '100%',
     height: '100%',
-  },
-  navBar: {
-    height: 64,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    borderTopWidth: 1,
-    borderTopColor: '#EEEEEE',
-    backgroundColor: '#FFFFFF',
-  },
-  navItem: {
-    padding: 8,
-  },
-  navIcon: {
-    width: 26,
-    height: 26,
   },
 });
