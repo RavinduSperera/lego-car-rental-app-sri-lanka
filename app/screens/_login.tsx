@@ -1,15 +1,15 @@
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
-    Image,
-    KeyboardAvoidingView,
-    Platform,
-    Pressable,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import '../../assets/images/map.png';
@@ -19,6 +19,7 @@ const LoginScreen = () => {
 
   const handleLogin = () => {
     // TODO: later navigate to home/dashboard after successful login
+    router.push('/screens/_home');
   };
 
   const handleSignUp = () => {
