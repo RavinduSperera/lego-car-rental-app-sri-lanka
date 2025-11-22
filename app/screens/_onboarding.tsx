@@ -15,6 +15,7 @@ const Onboarding = () => {
   const handleSkip = () => {
     // TODO: later navigate to login/home
     // example for later: router.replace('/login');
+    router.push('/screens/_register');
   };
 
   const handleNext = () => {

@@ -17,11 +17,12 @@ const Onboarding2 = () => {
   };
 
   const handleSkip = () => {
-    // TODO: later send to login / home screen
+    // navigate to register page
+    router.push('/screens/_register');
   };
 
   const handleNext = () => {
-    // TODO: later send to login / home screen
+    // navigate to register page
     router.push('/screens/_register');
   };
 

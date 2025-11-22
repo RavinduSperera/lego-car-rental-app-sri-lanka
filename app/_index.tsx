@@ -19,7 +19,7 @@ const SplashScreen = () => {
       {/* LOGO IMAGE (blue slanted bars) */}
       {/* TODO: put your real image at assets/images/splash-logo.png */}
       <Image
-        source={require('../assets/images/splash_logo.png')}
+        source={require('../assets/images/splash_logo_org.png')}
         style={styles.logo}
         resizeMode="contain"
       />
@@ -46,16 +46,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    width: 120,
-    height: 80,
+    width: 175,
+    height: 100,
     marginBottom: 48,
   },
   title: {
     fontSize: 28,
     letterSpacing: 2,
-    fontWeight: '700',
+    fontWeight: '900',
     color: '#2196C9',
-    marginBottom: 8,
+    marginBottom: 5,
   },
   subtitle: {
     width: '70%',
