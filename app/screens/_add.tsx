@@ -1,13 +1,13 @@
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import {
-    Image,
-    Pressable,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import FooterNav from '../../components/FooterNav';
@@ -32,36 +32,35 @@ const AddVehicleScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <ScrollView
-          style={{ flex: 1 }}
-          contentContainerStyle={styles.scrollContent}
-          showsVerticalScrollIndicator={false}
-        >
-          {/* TOP BAR – same as other pages */}
-          <View style={styles.topBar}>
-            <View style={styles.logoRow}>
-              {/* TODO: replace with real LEGO logo image */}
-              <Image
-                source={require('../../assets/images/header_logo.png')}
-                style={styles.logoMark}
-                resizeMode="contain"
-              />
-              <Text style={styles.logoText}>LEGO</Text>
-            </View>
-
-            <View style={styles.userRow}>
-              <View style={{ marginRight: 8 }}>
-                <Text style={styles.userName}>David Jay</Text>
-                <Text style={styles.userEmail}>david@gmail.com</Text>
-              </View>
-              {/* TODO: replace with actual avatar image */}
-              <Image
-                source={require('../../assets/images/avatar.png')}
-                style={styles.avatar}
-              />
-            </View>
+        {/* TOP BAR – same as other pages - Fixed Header */}
+        <View style={styles.topBar}>
+          <View style={styles.logoRow}>
+            {/* TODO: replace with real LEGO logo image */}
+            <Image
+              source={require('../../assets/images/header_logo.png')}
+              style={styles.logoMark}
+              resizeMode="contain"
+            />
           </View>
 
+          <View style={styles.userRow}>
+            <View style={styles.userInfo}>
+              <Text style={styles.userName}>David Jay</Text>
+              <Text style={styles.userEmail}>david@gmail.com</Text>
+            </View>
+            {/* TODO: replace with actual avatar image */}
+            <Image
+              source={require('../../assets/images/avatar.png')}
+              style={styles.avatar}
+            />
+          </View>
+        </View>
+
+        <ScrollView
+          style={{ flex: 1 }}
+          // contentContainerStyle={styles.scrollContent}
+          showsVerticalScrollIndicator={false}
+        >
           {/* PAGE TITLE */}
           <View style={styles.headerBlock}>
             <Text style={styles.pageTitle}>Add your Vehicle for Rent</Text>
@@ -236,23 +235,24 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
   },
-  scrollContent: {
-    paddingBottom: 90,
-  },
   topBar: {
     paddingHorizontal: 16,
-    paddingTop: 8,
-    paddingBottom: 4,
+    paddingTop: 12,
+    paddingBottom: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#F0F0F0',
+    zIndex: 10,
   },
   logoRow: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   logoMark: {
-    width: 40,
+    width: 100,
     height: 22,
     marginRight: 6,
   },
@@ -264,6 +264,10 @@ const styles = StyleSheet.create({
   userRow: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  userInfo: {
+    marginRight: 10,
+    alignItems: 'flex-end',
   },
   userName: {
     fontSize: 14,
