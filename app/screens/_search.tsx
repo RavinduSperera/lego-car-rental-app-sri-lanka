@@ -568,10 +568,10 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
   searchButton: {
-    marginHorizontal: 40,
+    marginHorizontal: 10,
     marginBottom: 24,
     marginTop: 4,
-    borderRadius: 26,
+    borderRadius: 10,
     backgroundColor: PRIMARY_BLUE,
     paddingVertical: 14,
     alignItems: 'center',
