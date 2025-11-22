@@ -10,11 +10,11 @@ const FooterNav = () => {
     <View style={styles.navBar}>
       {/* HOME */}
       <Pressable style={styles.navItem} onPress={() => router.push('/screens/_home')}>
-        <MaterialCommunityIcons name="home" size={28} color="#35A7D6" />
+        <MaterialCommunityIcons name="home" size={28} color="#A0A0A0" />
       </Pressable>
 
       {/* SEARCH */}
-      <Pressable style={styles.navItem}> {/** add onpress to this */}
+      <Pressable style={styles.navItem} onPress={() => router.push('/screens/_search')}> 
         <MaterialCommunityIcons name="magnify" size={28} color="#A0A0A0" />
       </Pressable>
 
