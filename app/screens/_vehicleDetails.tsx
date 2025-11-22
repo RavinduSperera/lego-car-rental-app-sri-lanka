@@ -2,12 +2,12 @@ import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
-    Image,
-    Pressable,
-    ScrollView,
-    StyleSheet,
-    Text,
-    View,
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 // importing images
@@ -128,7 +128,7 @@ const VehicleDetails: React.FC = () => {
           </View>
 
           {/* CONTACT BUTTON */}
-          <Pressable style={styles.contactButton}>
+          <Pressable style={styles.contactButton} onPress={() => router.push('/screens/_contactDetails')}>
             <Text style={styles.contactButtonText}>View Contact Details</Text>
           </Pressable>
         </ScrollView>
@@ -294,6 +294,7 @@ const styles = StyleSheet.create({
   },
 
   locationText: {
+    backgroundColor: '#ffffff7d',
     fontSize: 15,
     fontWeight: '600',
   },
