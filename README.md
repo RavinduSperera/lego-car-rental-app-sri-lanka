@@ -1,37 +1,18 @@
-# Welcome to your Expo app 👋
-
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
-
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-   # LEGO Vehicle Rental App 🚗🇱🇰  
+# LEGO Vehicle Rental App 🚗🇱🇰  
 A clean, minimal, and fully implemented Expo React Native mobile application for browsing, searching, and renting vehicles across Sri Lanka.
 
 This project contains:
-- Complete UI implementation (Expo + React Native)
+- Complete UI implementation with Expo + React Native
 - Onboarding flow
-- Home feed with horizontal sliders
-- Search & filters
-- Add-vehicle posting page (for owners)
-- Vehicle details page
-- Contact details page
+- Home page with horizontal sliders
+- Search filter page
+- Add-vehicle page (owners can post vehicles)
+- Vehicle details + owner contact details
 - Reusable components (FooterNav, Cards, etc.)
 
 ---
 
-## 📌 **1. Student Information**
+## 📌 1. Student Information
 **Name:** *Your Name*  
 **Student ID:** *Your ID*  
 **Module:** *Your Module Name*  
@@ -39,128 +20,162 @@ This project contains:
 
 ---
 
-## 📌 **2. Design File (Figma / AI Studio)**
+## 📌 2. Design File (Figma / AI Studio)
 🔗 **Design Prototype:**  
-`<ADD YOUR FIGMA / GOOGLE AI STUDIO LINK HERE>`
+`<ADD YOUR FIGMA OR GOOGLE AI STUDIO LINK HERE>`
 
 This includes:
-- Onboarding screens  
-- Home UI  
-- Search filters  
+- All onboarding screens  
+- Home + Search UI  
 - Vehicle details  
 - Contact details  
-- Add-vehicle posting screen  
+- Add-vehicle form  
 
 ---
 
-## 📌 **3. GitHub Repository (This Project)**  
-🔗 **GitHub Source Code:**  
-`<ADD YOUR GITHUB REPO LINK HERE>`
+## 📌 3. GitHub Repository (This Project)
+🔗 **React Native Source Code:**  
+`<ADD YOUR GITHUB REPOSITORY LINK HERE>`
 
 Clone the repo:
+
 ```bash
 git clone <your-repo-link>
 cd <project-folder>
+```
 
-Project Features
-✔ Onboarding experience
+---
 
-Minimal and modern onboarding screens with navigation.
+##🚀 Getting Started
+
+1. This is an Expo project created using:
+```bash
+npx create-expo-app
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start the project
+```bash
+npx expo start
+```
+
+Choose to open:
+Expo Go
+Android Emulator
+iOS Simulator
+
+---
+
+## 📦 Dependencies Used (with installation commands)
+✅ Safe Area Context
+(Required to replace deprecated SafeAreaView)
+```bash
+npx expo install react-native-safe-area-context
+```
+
+✅ Vector Icons (Ionicons + MaterialCommunityIcons)
+Used for bottom nav bar, buttons, cards, etc.
+```bash
+npx expo install @expo/vector-icons react-native-vector-icons
+```
+
+✅ Google Fonts – Poppins
+Used throughout the UI as the main typeface.
+```bash
+npx expo install expo-font
+npm install @expo-google-fonts/poppins
+```
+
+## 🧱 Main Features
+
+✔ Splash screen
+Minimal logo-based intro with timed navigation.
+
+✔ Onboarding screens (2 pages)
+Clean design with illustrations + navigation.
+
+✔ Login & Registration
+Map banner
+Styled forms
+Input validation structure
 
 ✔ Home Page
-
-Hero banner image
-
-Horizontal sliders (Most demands, 4x4s, etc.)
-
-Auto-scrolling image slider
-
-Bottom navigation bar component
+Sri Lanka welcome banner
+Horizontal image sliders
+Auto-slide “Try More Options” banners
+Footer navigation bar
 
 ✔ Search Page
-
-Search bar
-
-Vehicle type horizontal selection
-
+Search input
+Vehicle type selector
 Driver toggle
-
-Time duration calendar mock
-
-Map preview + location input
-
+Static calendar layout
+Map location picker
 Search button
 
-✔ Add Vehicle Page
-
-Vehicle type dropdown
-
-Image upload UI
-
-Description text area
-
-Driver toggle
-
-Location & contact input
-
+✔ Add-Vehicle Page
+Owners can post vehicles:
+Dropdown vehicle type
+Image upload placeholder
+Description
+Driver option
+Location + Contact
 Submit button
 
 ✔ Vehicle Details Page
-
 Image slider
-
-Description
-
+Description section
 Key features grid
-
-Owner details
-
-Map + location
-
-Contact CTA
+Owner info
+Map section
+Contact button
 
 ✔ Contact Details Page
-
-Owner card
-
+Owner portrait
+Phone number
 Call button
+Pickup location
+Important note
 
-Pickup map
-
-Note area
-
-
-
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+## 📁 Folder Structure
 ```bash
-npm run reset-project
+app/
+ ├── screens/
+ │    ├── _home.tsx
+ │    ├── _search.tsx
+ │    ├── _add.tsx
+ │    ├── _vehicleDetails.tsx
+ │    ├── _contactDetails.tsx
+ │    ├── _onboarding.tsx
+ │    ├── _onboarding2.tsx
+ │    ├── _login.tsx
+ │    ├── _register.tsx
+ │    └── index.tsx        (Splash)
+ │
+ ├── components/
+ │    └── FooterNav.tsx
+ │
+ ├── _layout.tsx          (SafeAreaProvider + Router)
+ │
+assets/
+ ├── images/
+ │    ├── logos/
+ │    ├── cars/
+ │    ├── maps/
+ │    ├── users/
+ │    └── onboarding/
+ │
+README.md
+package.json
+tsconfig.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🎉 Conclusion
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project was built as part of a complete UI/UX + React Native mobile app assignment.
+All screens were implemented cleanly using Expo, React Native, and a modern design strategy.
+The final result is simple, minimal, and production-ready for future backend integration.
