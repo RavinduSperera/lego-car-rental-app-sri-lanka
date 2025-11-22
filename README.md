@@ -22,7 +22,7 @@ This project contains:
 
 ## 📌 2. Design File (Figma / AI Studio)
 🔗 **Design Prototype:**  
-`<ADD YOUR FIGMA OR GOOGLE AI STUDIO LINK HERE>`
+`[<ADD YOUR FIGMA OR GOOGLE AI STUDIO LINK HERE>](https://www.figma.com/proto/20Wqrxku4I5xFR88EcfJU8/Car-Rental-App?node-id=16-6&t=FiklVwBsZEsqXyy6-1)`
 
 This includes:
 - All onboarding screens  
