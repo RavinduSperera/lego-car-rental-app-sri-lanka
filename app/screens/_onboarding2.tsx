@@ -1,10 +1,10 @@
 import { useRouter } from 'expo-router';
 import {
-    Image,
-    Pressable,
-    StyleSheet,
-    Text,
-    View,
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import "../../assets/images/onBoard_2.gif";
