@@ -19,7 +19,7 @@ const FooterNav = () => {
       </Pressable>
 
       {/* ADD / CREATE */}
-      <Pressable style={styles.navItem}> {/** add onpress to this */}
+      <Pressable style={styles.navItem} onPress={() => router.push('/screens/_add')}>
         <MaterialCommunityIcons name="plus-box-outline" size={28} color="#A0A0A0" />
       </Pressable>
     </View>
