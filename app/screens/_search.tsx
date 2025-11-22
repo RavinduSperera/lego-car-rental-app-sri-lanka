@@ -20,7 +20,7 @@ import '../../assets/images/vehicle_car.png';
 import '../../assets/images/vehicle_cycle.png';
 import '../../assets/images/vehicle_van.png';
 
-type VehicleType = 'car' | 'van' | 'bike' | 'cycle';
+type VehicleType = 'car' | 'van' | 'bike' | 'cycle' | 'scooty' | 'tuktuk' | 'suv';
 type DriverOption = 'with' | 'without';
 
 const SearchScreen: React.FC = () => {
@@ -118,6 +118,27 @@ const SearchScreen: React.FC = () => {
               onPress={() => setVehicleType('cycle')}
               // TODO: replace with your cycle illustration
               image={require('../../assets/images/vehicle_cycle.png')}
+            />
+            <VehicleCard
+              label="Scooty"
+              isActive={vehicleType === 'scooty'}
+              onPress={() => setVehicleType('scooty')}
+              // TODO: replace with your cycle illustration
+              image={require('../../assets/images/vehicle_scooty.png')}
+            />
+            <VehicleCard
+              label="Tuktuk"
+              isActive={vehicleType === 'tuktuk'}
+              onPress={() => setVehicleType('tuktuk')}
+              // TODO: replace with your cycle illustration
+              image={require('../../assets/images/vehicle_tuktuk.png')}
+            />
+            <VehicleCard
+              label="Suv"
+              isActive={vehicleType === 'suv'}
+              onPress={() => setVehicleType('suv')}
+              // TODO: replace with your cycle illustration
+              image={require('../../assets/images/vehicle_suv.png')}
             />
           </ScrollView>
 
@@ -412,6 +433,7 @@ const styles = StyleSheet.create({
   vehicleCardActive: {
     borderWidth: 2,
     borderColor: PRIMARY_BLUE,
+    backgroundColor: '#E6F6FC'
   },
   vehicleImage: {
     width: 46,

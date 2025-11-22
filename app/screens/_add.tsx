@@ -385,7 +385,7 @@ const styles = StyleSheet.create({
   },
   driverOption: {
     flex: 1,
-    borderRadius: 18,
+    borderRadius: 10,
     backgroundColor: '#FFFFFF',
     borderWidth: 1,
     borderColor: '#E3E3E3',
