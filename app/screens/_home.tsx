@@ -87,12 +87,16 @@ const HomeScreen = () => {
           {/* HERO BANNER: "WELCOME TO SRI LANKA" with lady in saree */}
           {/* This whole section is a single IMAGE, as you requested */}
           <View style={styles.heroWrapper}>
-            {/* TODO: export your full hero art and replace this path */}
-            <Image
-              source={require('../../assets/images/home_banner.png')}
-              style={styles.heroImage}
-              resizeMode="cover"
-            />
+            <View style={styles.heroImageContainer}>
+              {/* TODO: export your full hero art and replace this path */}
+              <Image
+                source={require('../../assets/images/home_banner.png')}
+                style={styles.heroImage}
+                resizeMode="cover"
+              />
+              {/* Decorative gradient overlay for depth */}
+              <View style={styles.heroOverlay} />
+            </View>
           </View>
 
           {/* MOST DEMANDS */}
@@ -288,12 +292,35 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginTop: 12,
     marginBottom: 20,
-    borderRadius: 20,
+    borderRadius: 28,
+    overflow: 'visible',
+  },
+  heroImageContainer: {
+    borderRadius: 28,
     overflow: 'hidden',
+    shadowColor: '#4CAFD1',
+    shadowOpacity: 0.4,
+    shadowRadius: 16,
+    shadowOffset: { width: 0, height: 10 },
+    elevation: 15,
+    borderWidth: 4,
+    borderColor: '#FFFFFF',
+    backgroundColor: '#FFFFFF',
   },
   heroImage: {
     width: '100%',
     height: 170,
+  },
+  heroOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderRadius: 28,
+    borderWidth: 1.5,
+    borderColor: 'rgba(76, 175, 209, 0.3)',
+    pointerEvents: 'none',
   },
   sectionTitle: {
     fontSize: 18,
