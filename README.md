@@ -40,7 +40,7 @@ cd <project-folder>
 
 ---
 
-##🚀 Getting Started
+## 🚀Getting Started
 
 1. This is an Expo project created using:
 ```bash
