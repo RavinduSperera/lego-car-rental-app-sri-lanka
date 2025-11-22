@@ -28,6 +28,8 @@ This project contains:
 🔗 **APK Installation Link**
 'https://expo.dev/accounts/rvndu.perera/projects/lego/builds/7e49e800-9558-4525-be32-5168cb60cdf1'
 
+---
+
 This includes:
 - All onboarding screens  
 - Home + Search UI  
